@@ -7,6 +7,14 @@ improved Cross Entropy Method for trajectory optimization
 Trajectory optimizers for model-based reinforcement learning, such as the Cross-Entropy Method (CEM), can yield compelling results even in high-dimensional control tasks and sparse-reward environments. However, their sampling inefficiency prevents them from being used for real-time planning and control. We propose an improved version of the CEM algorithm for fast planning, with novel additions including temporally-correlated actions and memory, requiring 2.7-22x less samples and yielding a performance increase of 1.2-10x in high-dimensional control problems.
 ## Requirements
 Installed via the provided Pipfile with `pipenv install`, then `pipenv shell` to activate virtualenv
+
+```
+sudo apt-get install libx11-dev libglew-dev libosmesa6-dev libgl1-mesa-glx libglfw3
+pip install git+https://github.com/s-bl/ALLogger.git
+pip install git+https://github.com/martius-lab/smart-settings.git
+pip install forwardable scikit-learn mujoco-py==2.0.2.0
+```
+
 ## Running Experiments
 - Inside icem folder run `python main.py settings/[env]/[json]`
 - To render all envs: set `"render": true` in `iCEM/icem/settings/defaults/gt_default_env.json`

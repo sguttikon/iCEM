@@ -1,10 +1,14 @@
 import os
+import sys
 from collections import deque
 import numpy as np
 import json
 import time
 import allogger
 from smart_settings.param_classes import recursive_objectify
+
+root_path = os.path.abspath(os.path.dirname(__file__))
+sys.path.append(root_path)
 from controllers import controller_from_string
 from controllers.abstract_controller import ModelBasedController, NeedsPolicyController, TeacherController, \
     ParallelController
@@ -16,6 +20,7 @@ from models import forward_model_from_string
 from misc.rollout_utils import RolloutManager
 from misc.rolloutbuffer import RolloutBuffer
 from misc.seeding import Seeding
+
 import torch.multiprocessing
 
 valid_data_sources = {"env", "policy", "expert"}
